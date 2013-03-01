@@ -74,6 +74,9 @@ AngularJS会在DOMContentLoaded事件触发时执行，并通过ng-app指令 寻
 指令指示的是“当关联的HTML结构进入编译阶段时应该执行的操作”。指令可以写在元素的名称里，属性里，css类名里，注释里。
 
 
+ ****
+AngularJS入门教程：导言和准备
+http://www.angularjs.cn/docs/tutorial/197.html
 
 
 
