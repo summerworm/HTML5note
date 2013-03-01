@@ -1,7 +1,4 @@
-
-
-��
-
+﻿
 
 
 
@@ -12,7 +9,34 @@
 
 
 
-javascript ��1ȡ���ļ��ַ�ʽ
+
+
+
+
+·
+
+
+
+
+
+我国的行政区规划代码是这样定义的，12位的统计用区划代码中，第1～2位，为省级代码；第3～4 位，为地级代码； 第5～6位，为县级代码； 第7～9位，为乡级代码； 第10～12位，为村级代码。
+
+首先将这些文件读入解析生成为一个XML文档，然后将xml中的数据写入到数据库中。数据库建了5个表，分别存储省province、市city、县county、乡town、村village。表结构:ID顺序编号、Name名称、Code编码、CityID所属的上一级ID。
+
+统计出来一共有34个省、直辖市和自治区，344个地级市，3152个县、区，43920个乡、镇、街道办事处，719472个村、社区。（市、县、乡、村均不包含港澳台的数据）
+
+
+
+
+
+
+angular / angularjs-batarang
+https://github.com/angular/angularjs-batarang#installing-from-source
+
+
+
+
+javascript 进1取整的几种方式
 http://beardnote.com/post/2013-01-17/40046787018
 
 
@@ -34,9 +58,9 @@ http://news.qq.com/a/20130301/000692.htm#p=1
 
 http://www.szwinsome.com.cn/
 http://www.instrument.com.cn/netshow/SH101842/index.asp
-���¾������Ľ�Ŀ
-����
-ƽ��r 2013-3-1 11:08:03
+大致就这样的节目
+界面
+平☆╮ 2013-3-1 11:08:03
 http://221742.shop.cecb2b.com/
 
 
@@ -59,9 +83,9 @@ https://github.com/icub3d/home/
 {
    f(a,b) 
  }
-�ڲ����õĻ��Ƿ�����  �ͺ�����ɶ����
+内部调用的还是方法吧  和函数有啥区别
 
-����������һ��������this,ָ�򷽷������Ķ���
+方法隐含第一个参数是this,指向方法所属的对象
 
 
 
@@ -69,31 +93,31 @@ https://github.com/icub3d/home/
 
 
 http://blog.ec-ae.com/?p=7867
-�и����ܽ��Go
-��ҿ���
+有个人总结的Go
+大家看看
 
 
-����� ������վ
+大胡子 个人网站
 http://martinfowler.com/
 
 
-go �к���Ҳ����������
+go 中函数也是数据类型
 
-����ί��
-���ط���
-
-
-ƤƤ�����Ǻ�ţ�Ƶ���Դ����վ
-��������90%�ı����ص�PDF�鼮
+返回委托
+返回泛型
 
 
-������������ϵͳ
+皮皮书屋是很牛逼的资源下载站
+可以下载90%的编程相关的PDF书籍
 
 
-�����и����⣬���ǰٶȲ�֧��ajax����
-�����Ҵ���ͬʱ������̬��վ
+深入理解计算机系统
 
-����վ��ҳ��һ��ר��Ϊ����׼��������
+
+现在有个问题，就是百度不支持ajax索引
+所以我打算同时成生静态网站
+
+在网站首页加一个专门为爬虫准备的链接
 
 
 
