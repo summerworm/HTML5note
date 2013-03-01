@@ -1,0 +1,528 @@
+
+
+
+
+
+
+
+中文社区
+http://cnodejs.org/
+
+node 的 wiki
+https://github.com/joyent/node/wiki
+
+资源
+http://www.nodecloud.org/
+
+
+
+
+
+深入浅出Node.js（四）：Node.js的事件机制
+http://www.infoq.com/cn/articles/tyq-nodejs-event
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------
+我们使用的技术是Node.js，主体架构用express、socket.io和MongoDB。
+
+
+supervisor全局安装，然后使用他的命令来启动js文件，例如supervisor app.js
+这样supervisor会监控你的nodejs文件，如果有改动，则不用手动重启服务器，他自己会重启。
+
+设置个cluster，然后直接跑吧，放心node.js没有你想象中那么脆弱，我们之前公司的一个node.js项目放那半年了，也没人维护，还跑的好好的
+
+nohup命令
+
+nohup node app.js
+停止就
+
+kill [PID]
+不知道PID就
+
+ps -e
+当然，我觉得forever就很好了
+
+-----------------------------------------
+
+
+Node.js不是以网页为中心的。Node.js是通用目的的JS运行时，带有很多功能强大的库。其中有一个库提供了HTTP/HTTPS的实现。
+
+你可以用Node.js做很多事情。你可以很容易的利用它来创建一个命令行程序或者其他TCP/IP服务。
+
+
+
+NPM（Node Package Manager）是你必备的工具。有了它，你就可以下载Node.js的各种代码包，驱动，解析器，编辑器，服务器等等。
+
+
+Node是一个服务器端JavaScript解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个(只有一个)物理机的连接代码。
+
+
+使用V8，Google创建了一个以C++编写的超快解释器，该解释器拥有另一个独特特征;您可以下载该引擎并将其嵌入任何 应用程序。它不仅限于在一个浏览器中运行。
+
+
+
+新的NoSQL数据库更适合Node
+
+
+-----------------------------------------
+在C++或C#中，当我们谈到对象，指的是类或者结构体的实例。对象根据他们实例化的模板（就是所谓的类），会拥有不同的属性和方法。但在JavaScript里对象不是这个概念。在JavaScript中，对象就是一个键/值对的集合 -- 你可以把JavaScript的对象想象成一个键为字符串类型的字典。
+
+但如果JavaScript的对象仅仅是键/值对的集合，它又怎么会拥有方法呢？好吧，这里的值可以是字符串、数字或者……函数！
+-----------------------------------------
+
+
+
+
+-----------------------------------------
+·Apache和Node.js的集成
+
+
+apache做反向代理
+
+ProxyPass		/nodejs/ http://mydomain:8088/
+ProxyPassReverse	/nodejs/ http://mydomain:8088/
+
+这样就行了
+
+Apache 代理(Proxy)
+http://z466459262.iteye.com/blog/1634230
+
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+处理不同的HTTP请求在我们的代码中是一个不同的部分，叫做“路由选择”——那么，我们接下来就创造一个叫做 路由 的模块吧。
+
+
+
+一个模块  server.js
+-----------------------------------------
+var http = require("http");
+
+function start() {
+  function onRequest(request, response) {
+    console.log("Request received.");
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello World");
+    response.end();
+  }
+
+  http.createServer(onRequest).listen(8888);
+  console.log("Server has started.");
+}
+
+exports.start = start;
+-----------------------------------------
+index.js 文件并写入以下内容：
+
+var server = require("./server");
+
+server.start();
+-----------------------------------------
+
+
+
+
+
+·模块
+
+
+Node.js也使用了CommonJS模块机制
+
+
+Node.js在载入模块时，如果之前该模块已经加载过则不会有重复开销，因为模块加载有缓存机制。
+
+Node.js是根据模块所在路径来缓存模块的。
+这么看来，“相同模块是否会被加载多次”这个问题，其实就演变成了“相同模块是否会出现在不同路径里”。
+如果相同模块出现在不同路径里，则可能会被多次加载。
+
+
+
+
+
+* connect模块
+
+
+
+
+
+
+
+
+* node-formidable 模块 处理POST数据
+
+Felix Geisendorfer开发的node-formidable模块。它对解析上传的文件数据做了很好的抽象。 其实说白了，处理文件上传“就是”处理POST数据 —— 但是，麻烦的是在具体的处理细节，所以，这里采用现成的方案更合适点。
+
+
+* fs 模块
+
+将该文件读取到我们的服务器中，使用一个叫fs的模块。
+
+
+
+* node-dev
+
+node-dev 模块是一个开发工具，当你的 js 文件修改保存后，他会自动重启服务进程，嫌 CTRL + C / up / down 费劲的同学可以尝试用它减轻开发调试的烦恼。
+
+使用方法
+
+node-dev --debug app.js
+
+Github 地址
+
+https://github.com/fgnass/node-dev
+
+
+* mongoosejs
+
+Mongoose 是 MongoDB 数据库的模型工具，为 NodeJS 设计，工作于异步环境下。
+
+
+
+
+* Nide
+
+Nide是一个基于Web的开源的Node.js IDE，在MIT License下开源，代码托管于GitHub。其设计思想是简单、易用。Nide最初是在一个叫做Node Knockout的48小时编程竞赛中开发产生的。
+
+
+
+http://coreh.github.com/nide/
+
+
+
+* Mustache，html 模板引擎
+
+html 模板引擎，Mustache
+
+
+npm install -g mustache
+
+
+
+
+
+
+
+
+
+·框架
+
+
+* rrestjs
+
+rrestjs是我无意中确是有意接触到的一款类似却又不似express的nodejs开发框架。
+http://cnodejs.org/topic/505c33ee10ccdf8077088e0a
+
+
+
+
+
+
+
+
+* express
+
+用node.js建博客(一) - node.js安装及Express框架简介
+http://witcheryne.iteye.com/blog/1165067
+
+
+Express 是基于Node.js，高性能、一流的 web 开发框架。
+
+Express JS 中文入门指引手册
+http://www.csser.com/tools/express-js/express-guide-reference-zh-CN.html
+
+
+express本来默认提供的引擎是jade模板引擎，它颠覆了传统的模板引擎，制定了一套完整的语法用来生产HTML的每个标签，功能强大但是不易学习，所以使用ejs模板，语法与asp、jsp和php一样，易于学习。
+
+
+
+
+
+
+
+
+
+·笔记
+
+
+
+* 安装
+
+现在是默认装到Program Files\nodejs下， npm 的 repo在 %USERPROFILE%\AppData\Roaming\npm 且会自动加到系统PATH下
+
+node 和 npm 会加到 PATH 里
+
+
+而npm也只不过是Node的一个全局模块而已~
+
+
+
+* 自动去重启nodejs进程
+-----------------------------------------
+Node-dev 是开发nodejs必备模块, 可以当有js文件修改后 自动去重启nodejs进程, 这样就不用每次ctrl+c 终止在重启了 
+而且不仅支持js文件, .json .node .coffee 文件格式都支持  
+
+
+同时还可以安装一个桌面程序Growl 或 libnotify. 用来方便观察nodejs的状态和出错信息  
+
+使用方法 
+
+先通过npm安装 
+
+npm install -g node-dev  (-g 参数表明安装到全局共用的目录下, 否则)
+
+然后原来运行node app.js 改为 node-dev --debug app.js 运行就可以,这样修改文件后就会自动更新了.
+
+使用 CoffeeScript 一样可以 例如 node-dev app.coffee
+需要安装一个桌面程序来监控nodejs情况 growlnotify 
+
+
+
+
+* 一个例子
+
+// 导入所需模块
+ var http = require("http"); 
+ var url = require("url"); 
+ var qs = require('querystring'); 
+
+其中 http 模块负责创建 Web 服务器及 HTTP 相关服务，url 模块负责解析 URL 地址，querystring 模块负责处理请求参数。
+
+-----------------------------------------
+querystring模块。
+querystring模块的主要用途是对字符串的处理，我们暂时先学习它的两个方法：
+querystring.stringify(obj, sep='&', eq='=');
+querystring.parse(str, sep='&', eq='=');
+前一个方法是将对象向字符串的处理，后一个方法是将字符串的处理（是不是想到了JSON?）。前一个方法的参数是待处理对象、键值对之间的分隔符号以及键值之间的分割符号；后一个方法的参数与前一个相同，只不过处理的过程是相反的而已。
+
+
+-----------------------------------------
+
+
+http://www.nodebeginner.org/index-zh-cn.html
+
+为了使整个过程非阻塞，Node.js会将POST数据拆分成很多小的数据块，然后通过触发特定的事件，将这些小数据块传递给回调函数。这里的特定的事件有data事件（表示新的小数据块到达了）以及end事件（表示所有的数据都已经接收完毕）。
+
+我们需要告诉Node.js当这些事件触发的时候，回调哪些函数。怎么告诉呢？ 我们通过在request对象上注册监听器（listener） 来实现。这里的request对象是每次接收到HTTP请求时候，都会把该对象传递给onRequest回调函数。
+
+
+直接在服务器中处理POST数据，然后将最终的数据传递给请求路由和请求处理器，让他们来进行进一步的处理。
+
+将data和end事件的回调函数直接放在服务器中，在data事件回调中收集所有的POST数据，当接收到所有数据，触发end事件后，其回调函数调用请求路由，并将数据传递给它，然后，请求路由再将该数据传递给请求处理程序。
+
+
+
+
+
+
+
+
+
+
+
+
+* 全局安装和非全局安装
+
+nodejs npm install -g 全局安装和非全局安装的区别
+1. npm install xxx -g 时， 模块将被下载安装到【全局目录】中。
+
+【全局目录】通过 npm config set prefix "目录路径" 来设置。
+
+2. npm install xxx ，则是将模块下载到当前命令行所在目录。
+
+例如：
+
+c:\123>npm install xxx
+
+将会安装到
+
+c:\123\node_modules\xxx
+
+nodejs npm
+
+
+* __dirname
+
+__dirname是node.js里面的全局变量，即取得执行的js所在的路径
+
+
+
+
+
+
+
+
+
+·一些链接
+
+
+
+经常看的
+-----------------------------------------
+NodeJS 常用模块介绍
+http://www.csser.com/board/4f55035305ee2e572400005e
+
+90 个 node.js 扩展模块，我们疯了
+http://www.oschina.net/news/21152/browserling-open-sources-90-node-modules
+
+
+
+
+-----------------------------------------
+
+
+
+
+
+
+浅析Node.js：一个“编码就绪”服务器
+http://developer.51cto.com/art/201106/269747.htm
+
+
+
+
+
+
+
+
+
+
+
+
+
+Modules
+https://github.com/joyent/node/wiki/modules
+
+node.js从入门到菜鸟——node与数据库，一段不得不说的故事
+http://www.cnblogs.com/xiao-yao/archive/2012/04/13/2445915.html
+
+
+Socket.IO
+http://socket.io/
+
+使用MongoJS来让Node.js程序操作MongoDB
+http://www.ijser.cn/?p=1222
+
+
+被误解的 Node.js
+http://www.ibm.com/developerworks/cn/web/1201_wangqf_nodejs/index.html
+
+nodejs如何使用mongo数据库
+http://cnodejs.org/topic/50286228f767cc9a512a4f10
+
+Node.js 操作mongodb好不爽
+http://cnodejs.org/topic/5044c3cd8bd986103c00c312
+
+
+express目录结构
+http://witcheryne.iteye.com/blog/1165067
+用node.js建博客(一) - node.js安装及Express框架简介
+
+
+http://www.nodejs.org/
+
+
+
+《Node.js开发指南》
+写书小记
+http://www.byvoid.com/blog/compose-a-book/zh-hans/
+
+
+
+
+-----------------------------------------
+* 电子书
+
+
+深入浅出Node.js.pdf
+http://www.open-open.com/doc/view/34bfe165a8d146999a81195b5c95df87
+
+Node入门
+http://www.nodebeginner.org/index-zh-cn.html
+
+Node.js 电子书(台湾).pdf
+http://www.open-open.com/doc/view/f1ebe87b26e8472d89d133f75c475011
+原版 在线版
+http://book.nodejs.tw/index.html
+
+
+
+
+-----------------------------------------
+
+
+
+
+
+connect源码分析--基础架构
+http://cnodejs.org/topic/4fb79b0e06f43b56112b292c
+
+Node.js简单介绍并实现一个简单的Web MVC框架
+http://cnodejs.org/topic/4f16442ccae1f4aa27001135
+
+用NodeJS打造你的静态文件服务器
+http://cnodejs.org/topic/4f16442ccae1f4aa27001071
+
+Factual API：Node的绝配应用
+http://cnodejs.org/topic/4fffdd5c4764b7290274cc80
+
+聘用Node.js开发者的六个建议
+http://www.csdn.net/article/2012-03-02/312647
+
+javascript V8惊人的性能
+http://www.jiangmiao.org/blog/2195.html
+The Computer Language Benchmarks Game提供了各种语言的性能大小等比较，但该网站的测试代码质量和注重方向参差不齐，总得来看V8的性能约为C的1/3。内存使用为5倍，代码量为1/3，作为最快的动态语言，比起PHP，Python，Ruby等可谓是相当出众。
+The Computer Language Benchmarks Game
+http://shootout.alioth.debian.org/u32/javascript.php
+
+Node.js 究竟是什么
+http://www.shuo7.com/post/469.html
+
+
+
+
+
+·已读链接
+
+
+Node入门
+http://www.nodebeginner.org/index-zh-cn.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,450 @@
+
+爬虫
+
+
+
+charset=gb2312
+
+
+
+
+
+
+爬虫专题
+http://subject.csdn.net/spider.htm
+
+如何自己写一个网络爬虫
+http://coolshell.cn/articles/27.html
+
+一个Go语言实现的web爬虫
+http://www.sharejs.com/codes/go/4416
+
+Go写的爬虫
+http://david-je.iteye.com/blog/1762622
+
+网络爬虫
+http://aguang520.iteye.com/blog/743724
+
+pykoala - 国人的爬虫程序
+http://www.66gg.org/pykoala+-+%E5%9B%BD%E4%BA%BA%E7%9A%84%E7%88%AC%E8%99%AB%E7%A8%8B%E5%BA%8F.html
+
+
+
+
+
+163 腾讯 凤凰
+
+http://www.chinaiiss.com/
+
+
+
+
+------------------------------- 百度
+
+国内
+国际
+军事
+财经
+互联网
+房产
+汽车
+体育
+娱乐
+游戏
+教育
+女人
+科技
+社会
+视频
+图片
+人物
+------------------------------- 腾讯
+
+新闻
+财经
+娱乐
+时尚
+体育
+科技
+游戏
+数码
+军事
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+------------------------------- 参考
+百度rss
+http://www.baidu.com/search/rss.html
+
+设置个性化新闻
+http://news.baidu.com/n?bypass=lamp&m=pagesother&v=newsgx
+
+-------------------------------
+
+
+
+
+
+
+
+第一个go语言的网络程序
+http://blog.csdn.net/dux003/article/details/5486898
+
+
+
+GO语言的字符集转换库
+http://code.google.com/p/go-charset/
+
+
+使用 Go 写了一个小小的脚本采集 OEIS.ORG 的所有网页
+http://cox.im/articles/collect-data-from-oeis-dot-org-in-go.html
+
+Go应用 留言本
+http://cox.im/articles/quick-and-clean-in-go.html
+
+
+
+
+
+
+Go 有很多数据库支持，但是我发现最简单的应该是通过 mgo 驱动连接 MongoDB
+
+Go 的标准库 *html/template*
+
+
+
+·外观 参考
+
+
+
+
+选中颜色
+http://cox.im/articles/go-templates-structure-and-data-control.html
+
+左侧标签云
+配色也不错
+http://blog.whhpaccp.com/?post=459
+
+
+分享纯CSS3编写的的精美动画进度条(附源码)
+http://www.cnblogs.com/58top/archive/2013/01/07/pure_css_progress_bar_animated_by_css3.html
+
+25个强大的CSS代码，据说这些是开发者经常遇到比较棘手的代码
+http://www.cnblogs.com/58top/archive/2012/07/20/2601686.html
+
+
+
+
+·模板
+
+
+web.go，Web框架
+https://github.com/hoisie/web.go
+
+
+
+
+
+
+
+Go 模板
+http://cox.im/articles/go-templates-sets.html
+http://bbs.studygolang.com/thread-78-1-1.html
+http://cox.im/articles/go-templates.html
+http://cox.im/articles/quick-and-clean-in-go.html
+Go 模板——结构与数据控制
+http://cox.im/articles/go-templates-structure-and-data-control.html
+Go Web开发之Revel - 模板
+http://www.cnblogs.com/ztiandan/archive/2013/01/07/2844616.html
+
+
+
+
+
+
+
+
+
+
+------------------------------- 
+模板集
+{{define}}…{{end}} 
+
+头部（Header），主体（Body）以及页脚（Footer）
+
+{{define "header"}}
+<html>
+<head></head>
+{{end}}
+
+{{define "body"}}
+<body></body>
+{{end}}
+
+{{define "footer"}}
+</html>
+{{end}}
+
+
+每一个模板都是由 {{define}}…{{end}} 对定义的
+每一个模板都给定了一个唯一的名称——如果你在一个文件中定义重复使用一个名称将引起一个 Panic
+不允许将任何字符写在 {{define}}…{{end}}对外——否则会引起Panic
+
+这上面这样的文件被解析为一个模板集之后，Go自动的创建一个以模板名称为键，模板内容为值的 Map：
+tmplVar["header"] = pointer to parsed template of text "<html> … </head>"
+tmplVar["body"] = pointer to parsed template of text "<body> … </body>"
+tmplVar["footer"] = pointer to parsed template of text "</html>"
+
+
+
+
+
+
+
+
+-------------------------------
+
+
+
+
+
+·数据库 mgo
+
+
+
+go语言操作 mongodb 的示例代码
+http://outofmemory.cn/code-snippet/666/go-language-operation-mongodb-shili-code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------
+mgo 是 MongoDB 的 GO 语言驱动包。
+
+网站
+http://labix.org/mgo
+
+-------------------------------
+go 光 mongodb 的 client 就有3个：gomongo，go-mongo，mgo。
+我初略看了下觉得 mgo 最靠谱。gomongo 是第一个出来的，但是目前活跃度没后两者高。
+mgo地址：http://bazaar.launchpad.net/~niemeyer/mgo/trunk/files
+gomongo地址：https://github.com/mikejs/gomongo
+go-mongo地址：https://github.com/garyburd/go-mongo
+
+
+
+
+
+
+
+·处理流程
+------------------------------- 处理流程
+			获取源码
+gb2312，gbk		转换 utf8
+<a>			保留所有a标签
+&nbsp;&gt;		空格等，删除
+ ></a>			之间没有汉字删除
+采集			获取到地址和标题
+
+
+
+-------------------------------
+
+
+
+·
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+读文件 字符数组 转字符串
+strconv.Itoa(10) 
+
+
+
+
+
+-------------------------------
+go语言 gb2312，gbk	转换 utf8
+项目
+http://code.google.com/p/mahonia/source/browse
+
+d := mahonia.NewDecoder("gbk")
+src = d.ConvertString(src) //转换成utf8
+-------------------------------
+
+
+
+-------------------------------
+其实字符串处理我们可以使用strings包来进行搜索(Contains、Index)、替换(Replace)和解析(Split、Join)等操作，但是这些都是简单的字符串操作，他们的搜索都是大小写敏感，而且固定的字符串，如果我们需要匹配可变的那种就没办法实现了，当然如果strings包能解决你的问题，那么就尽量使用它来解决。因为他们足够简单、而且性能和可读性都会比正则好。
+-------------------------------
+
+
+
+-------------------------------
+使用 HG 来作为代码管理工具
+http://cn.waterlin.org/ProjectManagement/Hg.html
+
+TortoiseSVN(SVN客户端)V1.7.11.23600简体中文免费版 32位
+http://www.xiazaiba.com/html/2625.html
+-------------------------------
+
+
+
+-------------------------------
+Gog语言开发的HTML解析器：go-html-transform
+http://www.open-open.com/lib/view/open1351147630571.html
+项目页面
+https://code.google.com/p/go-html-transform/
+源码
+http://code.google.com/p/go-html-transform/source/browse/html/transform/#transform
+说明
+http://godoc.org/code.google.com/p/go-html-transform/html/transform
+在我机器上的源文件
+D:\Go\src\pkg\html\transform
+-------------------------------
+
+
+
+-------------------------------
+UTF-8 Unicode Gbk gb2312
+
+unicode是理论 utf8是实现方式
+
+首先说明一下现在常用的一些编码方案： 
+　　１、在中国，大陆最常用的就是GBK18030编码，除此之外还有GBK，GB2312，这几个编码的关系是这样的。 
+最早制定的汉字编码是GB2312，包括6763个汉字和682个其它符号 
+95年重新修订了编码，命名GBK1.0，共收录了21886个符号。 
+之后又推出了GBK18030编码，共收录了27484个汉字，同时还收录了藏文、蒙文、维吾尔文等主要的少数民族文字，现在WINDOWS平台必需要支持GBK18030编码。 
+
+按照GBK18030、GBK、GB2312的顺序，３种编码是向下兼容，同一个汉字在三个编码方案中是相同的编码。
+
+　　２、台湾，香港等地使用的是BIG5编码 
+　　３、日本：SJIS编码 
+http://goodthinker.blog.163.com/blog/static/7111390201063125946576/?fromdm&fromSearch&isFromSearchEngine=yes
+-------------------------------
+
+
+
+-------------------------------
+exec gcc: exec: "gcc": executable file not foun...
+安装gcc
+http://sourceforge.net/projects/mingw/files/MinGW/
+-------------------------------
+
+
+
+
+·用正则
+
+-------------------------------
+用正则删除html内容
+import	"regexp"
+
+
+	//保留所有<a>
+	re, _ := regexp.Compile("\\<a[\\S\\s]+?\\</a\\>")
+	srca := re.FindAllString(src, -1)
+
+
+	/*
+		//将HTML标签全转换成小写
+		re, _ := regexp.Compile("\\<[\\S\\s]+?\\>")
+		src = re.ReplaceAllStringFunc(src, strings.ToLower)
+
+		//去除STYLE
+		re, _ = regexp.Compile("\\<style[\\S\\s]+?\\</style\\>")
+		src = re.ReplaceAllString(src, "")
+
+		//去除SCRIPT
+		re, _ = regexp.Compile("\\<script[\\S\\s]+?\\</script\\>")
+		src = re.ReplaceAllString(src, "")
+
+		//去除所有尖括号内的HTML代码，并换成换行符
+		re, _ = regexp.Compile("\\<[\\S\\s]+?\\>")
+		src = re.ReplaceAllString(src, "\n")
+
+		//去除连续的换行符
+		re, _ = regexp.Compile("\\s{2,}")
+		src = re.ReplaceAllString(src, "\n")
+	*/
+
+
+
+URLRegExp = "http://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?" 'URL正则表达式
+MailRegExp = "\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" '电子邮件正则表达式
+
+href=([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?
+
+
+
+一条捕获网页中所有链接的正则表达式，收藏一下，以后说不定会用上。
+/<a\s+href=["|\']?([^>"\' ]+)["|\']?\s*[^>]*>([^>]+)<\/a>/i
+
+
+
+		//去除所有<span>，有些中间还有汉字，但不重要
+		re, _ = regexp.Compile("\\<span[\\S\\s]+?\\</span\\>")
+		v = re.ReplaceAllString(v, "")
+
+\\<span\\>|\\<span[\\S\\s]+?\\>|\\</span\\>
+
+
+-------------------------------
+
+
+		//获取所有url
+		//re, _ = regexp.Compile("href=\"[_-=?&%;:/.\\w]*\"")
+		//上面的用下面替代，更好
+		re, _ = regexp.Compile("href=\"[\\S\\s]+?\"")
+		url = re.FindString(v)
+
+
+
+
+-------------------------------
+一般说来，比如要匹配 From
+让它忽略大小写问题。需要使用[Ff][Rr][Oo][Mm]
+这样相当不方便。
+-------------------------------
+
+
+
+
+
+
+

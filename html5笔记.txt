@@ -1,0 +1,468 @@
+
+
+http://www.w3.org/
+
+
+
+
+
+
+
+
+
+
+
+
+开发工具
+http://www.html51.com/topic-html5-ide.html
+
+
+
+
+
+
+HTML5 标签
+http://www.w3school.com.cn/html5/html5_reference.asp
+
+
+
+
+·一些链接
+
+学习HTML5不可错过的12家国外网站
+http://blog.jobbole.com/666/
+
+
+
+
+
+
+
+
+
+·HTML 5 教程
+
+http://www.w3school.com.cn/html5/index.asp
+
+
+
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<video width="320" height="240" controls="controls">
+  <source src="movie.ogg" type="video/ogg">
+  <source src="movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+</body>
+</html>
+
+
+HTML5 将成为 HTML、XHTML 以及 HTML DOM 的新标准。
+
+HTML5 是 W3C 与 WHATWG 合作的结果。
+	W3C 指 World Wide Web Consortium，万维网联盟。
+	WHATWG 指 Web Hypertext Application Technology Working Group。
+	WHATWG 致力于 web 表单和应用程序，而 W3C 专注于 XHTML 2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。
+
+为 HTML5 建立的一些规则：
+	新特性应该基于 HTML、CSS、DOM 以及 JavaScript。
+	减少对外部插件的需求（比如 Flash）
+	更优秀的错误处理
+	更多取代脚本的标记
+	HTML5 应该独立于设备
+	开发进程应对公众透明
+
+HTML5 中的一些有趣的新特性：
+	用于绘画的 canvas 元素
+	用于媒介回放的 video 和 audio 元素
+	对本地离线存储的更好的支持
+	新的特殊内容元素，比如 article、footer、header、nav、section
+	新的表单控件，比如 calendar、date、time、email、url、search
+
+
+video 元素支持三种视频格式：Ogg、MPEG 4、WebM
+	Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件
+	MPEG4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件
+	WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件
+
+<video> 与 </video> 之间插入的内容是供不支持 video 元素的浏览器显示的：
+	<video src="movie.ogg" width="320" height="240" controls="controls">
+	Your browser does not support the video tag.
+	</video>
+
+上面的例子使用一个 Ogg 文件，适用于Firefox、Opera 以及 Chrome 浏览器。
+要确保适用于 Safari 浏览器，视频文件必须是 MPEG4 类型。
+
+video 元素允许多个 source 元素。source 元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式：
+	<video width="320" height="240" controls="controls">
+	  <source src="movie.ogg" type="video/ogg">
+	  <source src="movie.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+	</video>
+
+autoplay	autoplay="autoplay"	一旦视频就绪马上开始播放。
+
+loop	loop="loop"	循环播放
+
+preload
+	preload="load"	规定是否预加载视频。
+		auto - 当页面加载后载入整个视频
+		meta - 当页面加载后只载入元数据
+		none - 当页面加载后不载入视频
+
+
+audio 元素支持三种音频格式：Ogg Vorbis、MP3、wav
+	<audio src="song.ogg" controls="controls">
+	Your browser does not support the audio tag.
+	</audio>
+	要确保适用于 Safari 浏览器，音频文件必须是 MP3 或 Wav 类型。
+
+	<audio controls="controls">
+	  <source src="song.ogg" type="audio/ogg">
+	  <source src="song.mp3" type="audio/mpeg">
+	Your browser does not support the audio tag.
+	</audio>
+
+
+canvas 元素用于在网页上绘制图形。使用 JavaScript 在网页上绘制图像
+
+规定元素的 id、宽度和高度：<canvas id="myCanvas" width="200" height="100"></canvas>
+
+canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成：
+	<script type="text/javascript">
+	var c=document.getElementById("myCanvas");	使用 id 来寻找 canvas 元素
+	var cxt=c.getContext("2d");			然后，创建 context 对象：
+	cxt.fillStyle="#FF0000";			绘制一个红色的矩形
+	cxt.fillRect(0,0,150,75);
+	</script>
+	fillStyle 方法将其染成红色，fillRect 方法规定了形状、位置和尺寸。
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+canvas 实例
+http://www.w3school.com.cn/html5/html_5_canvas.asp
+
+
+HTML5 提供了两种在客户端存储数据的新方法：
+	localStorage - 没有时间限制的数据存储
+	sessionStorage - 针对一个 session 的数据存储
+
+	之前，这些都是由 cookie 完成的。但是 cookie 不适合大量数据的存储，因为它们由每	个对服务器的请求来传递，这使得 cookie 速度很慢而且效率也不高。
+
+	在 HTML5 中，数据不是由每个服务器请求传递的，而是只有在请求时使用数据。它使在不	影响网站性能的情况下存储大量数据成为可能。
+
+	对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据。
+
+	HTML5 使用 JavaScript 来存储和访问数据。
+
+localStorage 方法
+	<script type="text/javascript">
+	localStorage.lastname="Smith";
+	document.write(localStorage.lastname);
+	</script>
+
+sessionStorage 方法
+	<script type="text/javascript">
+	sessionStorage.lastname="Smith";
+	document.write(sessionStorage.lastname);
+	</script>
+
+
+HTML5 新的 Input 类型
+
+email
+url
+number
+range
+Date pickers (date, month, week, time, datetime, datetime-local)
+search
+color
+
+
+email	在提交表单时，会自动验证 email 域的值。
+	E-mail: <input type="email" name="user_email" />
+
+url	在提交表单时，会自动验证 url 域的值。
+	Homepage: <input type="url" name="user_url" />
+
+number	Points: <input type="number" name="points" min="1" max="10" />
+		step	间隔
+		value	默认值
+
+range 类型用于应该包含一定范围内数字值的输入域。
+range 类型显示为滑动条。
+	<input type="range" name="points" min="1" max="10" />
+
+Date Pickers（数据检出器）
+	HTML5 拥有多个可供选取日期和时间的新输入类型：
+		date - 选取日、月、年
+		month - 选取月、年
+		week - 选取周和年
+		time - 选取时间（小时和分钟）
+		datetime - 选取时间、日、月、年（UTC 时间）
+		datetime-local - 选取时间、日、月、年（本地时间）
+	Date: <input type="date" name="user_date" />
+
+search
+	search 类型用于搜索域，比如站点搜索或 Google 搜索。
+	search 域显示为常规的文本域。
+
+
+HTML5 的新的表单元素：
+	datalist
+	keygen
+	output
+
+datalist 元素
+	datalist 元素规定输入域的选项列表。
+	列表是通过 datalist 内的 option 元素创建的。
+	如需把 datalist 绑定到输入域，请用输入域的 list 属性引用 datalist 的 id
+	Webpage: <input type="url" list="url_list" name="link" />
+	<datalist id="url_list">
+	<option label="W3School" value="http://www.W3School.com.cn" />
+	<option label="Google" value="http://www.google.com" />
+	<option label="Microsoft" value="http://www.microsoft.com" />
+	</datalist>
+	option 元素永远都要设置 value 属性。
+
+keygen 元素
+	keygen 元素的作用是提供一种验证用户的可靠方法。
+	keygen 元素是密钥对生成器（key-pair generator）。当提交表单时，会生成两个键，一	个是私钥，一个公钥。
+	私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。公钥可用于	之后验证用户的客户端证书（client certificate）。
+	目前，浏览器对此元素的糟糕的支持度不足以使其成为一种有用的安全标准。
+
+	<form action="demo_form.asp" method="get">
+	Username: <input type="text" name="usr_name" />
+	Encryption: <keygen name="security" />
+	<input type="submit" />
+	</form>
+
+
+output 元素
+	output 元素用于不同类型的输出，比如计算或脚本输出：
+	<output id="result" onforminput="resCalc()"></output>
+
+
+表单 <form> 和 <input> 元素的新属性。
+
+autocomplete 属性	规定 form 或 input 域应该拥有自动完成功能。
+autofocus 属性		规定在页面加载时，域自动地获得焦点。
+form 属性		规定输入域所属的一个或多个表单。
+
+表单重写属性（form override attributes）允许您重写 form 元素的某些属性设定。
+			formaction - 重写表单的 action 属性
+			formenctype - 重写表单的 enctype 属性
+			formmethod - 重写表单的 method 属性
+			formnovalidate - 重写表单的 novalidate 属性
+			formtarget - 重写表单的 target 属性
+			表单重写属性适用于以下类型的 <input> 标签：submit 和 image。
+
+height 和 width 属性	规定用于 image 类型的 input 标签的图像高度和宽度。
+			height 和 width 属性只适用于 image 类型的 <input> 标签。
+
+list 属性		规定输入域的 datalist。datalist 是输入域的选项列表。
+			注释：list 属性适用于以下类型的 <input> 标签：text,
+			search, url, telephone, email, date pickers, number, 
+			range 以及 color。
+
+min、max 和 step 属性	用于为包含数字或日期的 input 类型规定限定（约束）。
+
+multiple 属性		规定输入域中可选择多个值。
+
+novalidate 属性		规定在提交表单时不应该验证 form 或 input 域。
+
+pattern 属性		规定用于验证 input 域的模式（pattern）。
+			模式（pattern） 是正则表达式。
+			pattern="[A-z]{3}"
+
+placeholder 属性	提供一种提示（hint），描述输入域所期待的值。
+			placeholder="Search W3School"
+
+required 属性		规定必须在提交之前填写输入域（不能为空）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+·属性
+
+文本、 图像、背景、边框、SVG内容和HTML5视频/音频
+
+包含七个HTML5元素：“属性”、“音频”、“视频”、“画布”、“getElementsByClassName”、 “foreigncontent”和“xhtml5”
+
+
+
+
+
+
+·主要功能
+
+现将W3C公布的HTML5以及与其相关的主要功能列举如下：
+
+
+通信相关（Web Sockets, Server-Sent Events等等）
+CSS3样式
+设备定位功能（取得地理位置信息等等）
+3D以及画面显示效果（WebGL,CSS3的3D功能等等）
+多媒体（Audio/Video等等）
+性能及功能性的提高（Web Workers,XHR2等等）
+语义性（Microdata微数据等等）
+离线及本地存储（App Cache,本地存储，IndexedDB等等）
+在这之中，即使离线也可以使用Web网页，Web应用程序的功能，使用JavaScript也可以使用多线程的Web Workers，以及CSS3中的几个功能都没有在IE9中得到支持。
+
+
+首先针对CSS3做一个说明，CSS的属性中的供应商前缀（为了在其他供应商所提供的浏览器中使用而在CSS的属性前增加的“-moz-”，“-webkit-”等等前缀。）在IE9中不提供支持。
+
+
+　　在IE9中提倡“统一标记”，就是说同样的属性，标记应该在任何浏览器中的渲染效果应该都是同样的。也就是说为了在各供应商所提供的浏览器中使用而人为增加的各种前缀是不符合这个概念的，所以不提供支持。
+
+还有一个问题就是关于离线应用。这是因为它的一个相关功能IndexedDB的实现方法也还没有被确定下来，所以与之密切相关的离线应用程序功能也暂时不被支持。
+
+
+·HTML5的技术组成
+
+
+脱机功能
+HTML5透过JavaScript提供了数种不同的脱机储存功能，相对于传统的Cookie而言有更好的弹性以及架构，并且可以储存更多的内容。
+WebStorage – 比Cookies更大、更有弹性的的储存
+Web SQL Database – 本地端的SQL数据库
+Indexed DB – Key-value的本地数据库
+Application Cache – 将部分常用的网页内容cache起来
+实时通讯
+以往网站由于HTTP协议以及浏览器的设计，实时的互动性相当的受限，只能使用一些技巧来「仿真」实时的通讯效果，但HTML5提供了完善的实时通讯支持。
+WebSocket – 实时的socket联机
+Web Workers – 以往JavaScript都是single thread，透过Worker可以有多个运算
+Notifications – 原生的提示讯息，类似像OS X的Growl提示
+档案以及硬件支持
+不知道大家有没有发现，在Gmail等新的网页程序当中，已经可以透过拖拉的方式将档案作为邮件附件？这就是这部份HTML5档案的功能中的Drag’n Drop和File API。
+Drag’n Drop – HTML元素的拖拉
+File API – 读取用户本机计算机的内容
+Geolocation – 地理定位
+Device orientation – 手持装置的方向
+Speech input – 语音输入
+
+语义化
+语义化的网络是可以让计算机能够更加理解网页的内容，对于像是搜索引擎的优化（SEO）或是推荐系统可以有很大的帮助。
+New tags – 新的标签，像是< header>、< section>等
+Application tags – 也是新的标签，像是< meter>、< progress>
+等
+Microdata – 加入语义的数据让搜索引擎等网站可以正确显示
+Form type – < form>可以加入的type便多了，包含email和tel等属性，浏览器会协助进行数据格式的验证
+多媒体
+Audio、Video的卷标支持以及Canvas的功能应该是大家对于HTML5最熟悉的部份了，也是许多人认为Flash会被取代的主要原因。
+Audio video – 影片和音乐的原生播放支持
+Canvas – 2D的绘图功能支持
+Canvas 3D – 3D的绘图功能支持
+SVG – 向量图支援
+
+
+CSS 3
+CSS3支持了字体的嵌入、版面的排版，以及最令人印象深刻的动画功能。
+Selector – 更有弹性的选择器
+Webfonts – 嵌入式字体
+Layout – 多样化的排版选择
+Stlying radius gradient shadow – 圆角、渐层、阴影
+Border background – 边框的背景支持
+Transition – 组件的移动效果
+Transform – 组件的变形效果
+Animation – 将移动和变形加入动画支持
+
+JavaScript
+在比较JavaScript的基本面也新增了DOM的API、和浏览器上下页的纪录修改。
+DOM API – 更方便的查询DOM组件
+History API – 浏览器的上下页内容修改，方便AJAX可以保留浏览记录
+
+
+
+而对于旧的浏览器兼容性而言，先前撰文介绍过的CSS3 Pie便是一个让旧版浏览器也能支持CSS 3功能的JavaScript函数库。
+
+而Modernizer也是一个相当重要的JavaScript函数库，提供开发者轻松的方式判别目前使用者的浏览器是否有支持特定的HTML5功能。
+
+
+
+
+
+
+
+
+
+
+
+
+·HTML5 
+
+HTML5 超文本标记语言(Hypertext Markup Language)
+
+
+如果想要提供一种适用于多种设备的网络应用体验，那么就必须得支持HTML5。
+
+据追踪互联网技术的科技博客binvisions.com报道，截至9月底的第三季度，在全球最受欢迎的100个网站中有34%的网站采用了HTML5。
+
+
+HTML5技术将能使艺术家、媒体公司及广告商以从未有过的方式来打造个性化网络服务，这项技术让开发权重新回到了那些拥有创造力的人们的手中。
+
+曾在20世纪90年代成功开发首款网络浏览器网景(Netscape)的风险投资人马克-安德森(Marc Andreessen)
+
+* 应用
+
+亚马逊一款基于网页的应用程序Kindle Cloud Reader就采用了HTML5技术，从而避开了苹果对在iPhone和iPad上销售内容的相关规定。
+
+《愤怒的小鸟》游戏开发商Rovio Entertainment Ltd.开发了该游戏的HMTL5版，用户无需下载应用程序即可体验该游戏。
+
+在线广播服务提供商Pandora Media的在线电台网站已升级采用HMTL5技术，这使得用户登录更加迅速，而且能够更便捷地追踪其他听众的收听模式。
+
+此外，包括《花花公子》和《体育画报》在内的出版商也采用了HTML5技术，其电子杂志用户可以放大图片比例并迅速浏览。
+
+
+·HTML5（目前）无法帮你实现的五件事
+
+1:HTML5无法实现DRM 如果你有一家多媒体公司，你需要控制或者限制你的视频内容——通常是在多媒体内容中添加数字版权加密技术（DRM）。不幸的是，HTML5无法加入DRM。HTML5的问题是，它会将多媒体内容的格式完全暴露出来，要解决这个问题并不困难（相关的技术和策略可以在W3C bug system上看到）。我个人认为，这个问题确实有必要解决。抛开各界对DRM的争议，至少对许多公司而言，支持DRM还是非常有意义的——看看Lovefilm的blog ，你就知道目前各个多媒体公司面临的困难了。
+
+
+2:HTML5不能播放直播视频
+ HTML5已经能够很好地处理静态的视频文件了，但它现在还无法处理直播的视频。尽管HTML5能够提供优质的视频查询和视频点播服务，但是它却无法支持用户观看在线的足球比赛。Apple使用HTTP Live Streaming弥补了HTML5的这一缺失。它通过HTTP传输H.264的文件块，但是这一技术只能在Safari上运行。（顺便提一句，有些人以为HTML5不支持视频的随机播放，但其实HTML5是支持这一功能的。）Streaming Media杂志的网站上能够找到非常丰富的HTML5视频资源。
+
+
+3:HTML5上的音频处理也不完美
+ 你也许会认为：既然HTML5都能够解决视频播放问题了，那音频播放自然不在话下咯。但音频处理最大的问题就是怎样处理延迟的问题。当你的应用程序或是游戏要求音频文件与屏幕上显示的操作保持同步时，这个问题就凸显出来了。其中一个问题就是不同的浏览器处理音频文件的方式可能也有所不同。如果想了解更多相关的信息，可以看看IE博客上的相关介绍，Grant Skinner的SoundJS JavaScript library提供了一种不错的解决方案。
+
+4:HTML5上不能与摄像头交互
+ 与Flash有所不同，HTML5不支持用户与摄像头交互（或者是PC机上的麦克风），这使得基于web的会议很难实现。当然也不是完全没有办法，在HTML5Labs上，你可以找到一个Media Capture API的相关标准，它是W3C标准中有关音频处理的部分。HTML5Labs是由最早的Microsoft标准和一些web标准（如W3C）演化而来的。所以它目前还处在发展之中，一旦音频处理问题解决了，就开始着手解决视频问题了。你可以在HTML5Labs网站上找到许多相关的资料。
+
+5:HTML5上无法实现视频的全屏播放
+ 使用插件全屏观看视频是没有问题的。但是，如果是使用HTML5，这可能还有点困难（至少是现在）。但针对这一问题，现在已经有一些相关的支持协议了。Chris Pearce在Thundering Herd博客中介绍了他是如何使用HTML全屏API在Firefox上实现视频的全屏播放的。这个API提供了“全屏”的HTML组件。Chrome上也有相关的解决方案。
+
+ 以上就是HTML5目前无法实现的5件事，但是HTML5不久将解决上述这些问题。
+
+
+
+
+
+
+
+

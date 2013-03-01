@@ -1,0 +1,933 @@
+
+
+Javascript语言
+http://www.berlinix.com/Javascript.html
+
+
+
+
+
+
+
+
+
+使用 JavaScript 框架可以更容易地编写检索、遍历、操作 DOM 元素的代码。
+
+
+
+
+
+10个顶级Web移动开发JavaScript框架
+http://www.mhtml5.com/2011/08/2526.html
+
+
+
+
+
+
+
+
+
+
+富互联网应用程序（RIA）
+
+
+
+JSON (JavaScript Object Notation)
+
+使用 DOM (Document Object Model) 操作来修改部分 Web 页面，显示其变化或由 HTTP 响应返回的数据。
+
+
+
+一个常见的特性是 “rollover link”，就是当用户将鼠标移到图片或文本链接上时，图片或文本链接的颜色会改变。
+
+Asynchronous JavaScript and XML (Ajax) 
+
+
+
+
+灵巧
+
+　　没人否认JavaScript本身强大的灵活性，强大的自解析，原型链和弱类型衍生出的种样繁多的开发方式.实在是让人爱不释手。
+
+　　普及
+
+　　JSON确实有XML不可比拟的潜质，体积瘦小，方便传输.众多语言中都有支持.客户端无需插件就能原生解析.还有什么比这更棒的么?
+
+
+
+创建你自己的 JavaScript 对象
+http://www.w3school.com.cn/js/js_objects.asp
+
+
+
+
+
+·js 学习笔记
+
+
+
+
+* 数据类型
+
+在JavaScript中,一共有六种数据类型: Object, Number, String, Boolean, Null, 以及 Undefined.
+
+
+对象(Objects)类型包含了数组(arrays), 函数(functions),以及其他的一般对象.
+
+数字(Numbers)类型可以是整型(integers)或者浮点数(floating point)类型以及特殊值NaN和Infinity.
+
+字符串(Strings)类型包含了空字符串, ”".
+
+布尔值(Booleans)类型只有两个值:true和false.
+
+Null类型只有一个值:null, 
+
+Undefined类型只有一个值:undefined.
+
+所有Object除外的类型都称之为“原始值(primitive)”.
+
+JavaScript变量的类型不是在定义的时候明确指定的,而是在脚本运行的时候自动推断出来的.
+
+
+
+如果操作数的类型必须是Number类型,这就意味着JavaScript引擎会调用对象的valueOf()方法,如果返回的结果仍然不是一个原始值,则会调用对象的toString()方法转换成一个String类型的值.
+
+如果操作数的类型必须是String类型,则会首先调用对象的toString()方法,如果返回的结果不是一个原始值,再调用对象的valueOf()方法.不管那种情况,如果最终的转换结果仍然不是一个原始值,则抛出异常.
+
+--------------------
+如果操作数的类型必须是一个数字,但该操作数的实际类型是:
+Object:
+该值首先被转换成原始值,如果转换的结果不是一个数字,则会进入下面的转换分支.
+ 
+String:
+字符串类型的值会按照通常的JavaScript规则转换成数字类型
+ 
+Boolean:
+如果值为true,转换为1,否则转换为0
+ 
+Null:
+0
+ 
+Undefined:
+NaN
+--------------------
+如果操作数的类型必须是一个字符串,但该操作数的实际类型是:
+ 
+Object:
+该值首先被转换成原始值,如果转换的结果不是一个字符串,则会进入下面的转换分支.
+ 
+Number:
+数字直接转为字符串, 比如 ”123″ or ”12.34″
+ 
+Boolean:
+转为”true”或”false”
+ 
+Null:
+“null”
+ 
+Undefined:
+“undefined”
+--------------------
+如果操作数的类型必须是一个布尔值,但该操作数的实际类型是:
+ 
+Object:
+true
+ 
+Number:
+如果值为0,则转为false,否则转为true  (译者注:NaN也会转为false)
+ 
+String:
+如果值为一个空字符串”",则转为false,否则转为true
+ 
+Null:
+false
+ 
+Undefined:
+false
+--------------------
+如果操作数的类型必须是一个对象值,但该操作数的实际类型是:
+ 
+Number:
+使用包装对象类型Number来包装原始值,new Number(value)
+ 
+String:
+使用包装对象类型String来包装原始值,new String(value)
+ 
+Boolean:
+使用包装对象类型Boolean来包装原始值,new Boolean(value)
+ 
+Null:
+抛出异常
+---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* 笔记
+
+-----------------------------------------
+
+匿名函数
+
+
+
+将一段可变的文本放入 HTML 页面：document.write("<h1>" + name + "</h1>")
+
+
+<script type="text/javascript">
+document.write("Hello World!");
+</script>
+
+<!--
+注释
+//-->
+
+当页面载入时，会执行位于 body 部分的 JavaScript。
+当被调用时，位于 head 部分的 JavaScript 才会被执行。
+
+
+
+
+
+-------------------------------------------
+JavaScript 的正式名称是 "ECMAScript"。这个标准由 ECMA 组织发展和维护。
+ECMA-262 是正式的 JavaScript 标准。这个标准基于 JavaScript (Netscape) 和 JScript (Microsoft)。
+Netscape (Navigator 2.0) 的 Brendan Eich 发明了这门语言，从 1996 年开始，已经出现在所有的 Netscape 和 Microsoft 浏览器中。
+ECMA-262 的开发始于 1996 年，在 1997 年 7 月，ECMA 会员大会采纳了它的首个版本。
+在 1998 年，该标准成为了国际 ISO 标准 (ISO/IEC 16262)。
+-------------------------------------------
+
+不支持 JavaScript 的浏览器
+
+<script type="text/javascript">
+<!--
+document.write("Hello World!");
+//-->
+</script>
+-------------------------------------------
+
+外部脚本
+<script src="/xxx/xxx.js"></script>
+-------------------------------------------
+
+document.write("Hello world");
+
+分号是可选的
+
+{ .... }
+代码块的作用是一并地执行语句序列。
+-------------------------------------------
+
+// 
+
+/*  */
+-------------------------------------------
+
+变量对大小写敏感
+变量必须以字母或下划线开始
+
+var x;
+var x=5;
+
+变量会自动声明
+
+再次声明了 JavaScript 变量，该变量也不会丢失其原始值。
+
+var x=5;
+var x; 
+-------------------------------------------
+
+要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：
+txt1="What a very ";
+txt2="nice day";
+txt3=txt1+txt2;
+
+或者把空格插入表达式中：
+txt1="What a very";
+txt2="nice day";
+txt3=txt1+" "+txt2;
+-------------------------------------------
+
+==	等于
+===	全等（值和类型）	x===5 为 true；x==="5" 为 false
+
+
+&&
+||
+!	!(x==y)
+-------------------------------------------
+
+基于某些条件对变量进行赋值的条件运算符
+
+variablename=(condition)?value1:value2 
+
+greeting=(visitor=="PRES")?"Dear President ":"Dear ";
+-------------------------------------------
+
+switch 语句
+
+switch(n)
+   {
+   case 1:
+     执行代码块 1
+     break
+   case 2:
+     执行代码块 2
+     break
+   default:
+     如果n即不是1也不是2，则执行此代码
+   }
+
+ (n) 可以是表达式，也可以（并通常）是变量。
+-------------------------------------------
+
+警告框、确认框、提示框
+
+alert("文本")
+
+confirm("文本")
+
+提示框经常用于提示用户在进入页面前输入某个值。
+当提示框出现后，用户需要输入某个值，然后点击确认或取消按钮才能继续操纵。
+如果用户点击确认，那么返回值为输入的值。如果用户点击取消，那么返回值为 null。
+
+prompt("文本","默认值")
+-------------------------------------------
+
+函数
+
+将脚本编写为函数，就可以避免页面载入时执行该脚本。
+
+函数在页面起始位置定义，即 <head> 部分。
+
+function 函数名(var1,var2,...,varX)
+  {
+  代码．．．
+  }
+var1, var2 等指的是传入函数的变量或值。
+
+return 语句
+-------------------------------------------
+
+
+按钮 执行函数
+
+<input type="button" value="Click me!" onclick="displaymessage()" >
+-------------------------------------------
+
+for
+将一段代码循环执行指定的次数
+while
+当指定的条件为 true 时循环执行代码
+
+for (变量=开始值;变量<=结束值;变量=变量+步进值) 
+{
+    需执行的代码
+}
+
+while (变量<=结束值)
+{
+    需执行的代码
+}
+
+do
+{
+    需执行的代码
+}
+while (变量<=结束值)
+
+
+break
+continue
+-------------------------------------------
+
+for...in 语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。
+
+for (变量 in 对象)
+{
+    在此执行代码
+}
+-------------------------------------------
+
+事件是可以被 JavaScript 侦测到的行为。
+
+事件举例：
+鼠标点击
+页面或图像载入
+鼠标悬浮于页面的某个热点之上
+在表单中选取输入框
+确认表单
+键盘按键
+
+事件通常与函数配合使用，当事件发生时函数才会执行。
+-------------------------------------------
+
+onload 和 onUnload
+当用户进入或离开页面时就会触发 onload 和 onUnload 事件。
+
+onload 事件常用来检测访问者的浏览器类型和版本，然后根据这些信息载入特定版本的网页。
+
+onload 和 onUnload 事件也常被用来处理用户进入或离开页面时所建立的 cookies。
+
+例如，当某用户第一次进入页面时，你可以使用消息框来询问用户的姓名。姓名会保存在 cookie 中。当用户再次进入这个页面时，你可以使用另一个消息框来和这个用户打招呼："Welcome John Doe!"。
+-------------------------------------------
+
+onFocus、onBlur 和 onChange 事件通常相互配合用来验证表单。
+
+下面是一个使用 onChange 事件的例子。用户一旦改变了域的内容，checkEmail() 函数就会被调用。
+<input type="text" size="30" id="email" onchange="checkEmail()">
+-------------------------------------------
+
+onSubmit 用于在提交表单之前验证所有的表单域。
+
+下面是一个使用 onSubmit 事件的例子。当用户单击表单中的确认按钮时，checkForm() 函数就会被调用。假若域的值无效，此次提交就会被取消。checkForm() 函数的返回值是 true 或者 false。如果返回值为true，则提交表单，反之取消提交。
+<form method="post" action="xxx.htm" onsubmit="return checkForm()">
+-------------------------------------------
+
+onMouseOver 和 onMouseOut
+onMouseOver 和 onMouseOut 用来创建“动态的”按钮。
+下面是一个使用 onMouseOver 事件的例子。当 onMouseOver 事件被脚本侦测到时，就会弹出一个警告框：
+<a href="http://www.w3school.com.cn"
+onmouseover="alert('An onMouseOver event');return false">
+
+<img src="w3school.gif" width="100" height="30">
+
+</a>
+-------------------------------------------
+
+try...catch 的作用是测试代码中的错误。
+
+有两种在网页中捕获错误的方法：
+使用 try...catch 语句。(在 IE5+、Mozilla 1.0、和 Netscape 6 中可用)
+使用 onerror 事件。这是用于捕获错误的老式方法。(Netscape 3 以后的版本可用)
+注意：chrome、opera 和 safari 浏览器不支持 onerror 事件。
+
+try
+{
+   //在此运行代码
+}
+catch(err)
+{
+   //在此处理错误
+}
+
+
+如果 confirm 方法的返回值为 false，代码会把用户重定向到其他的页面。如果 confirm 方法的返回值为 true，那么代码什么也不会做。
+
+
+用 throw 语句来创建异常。throw 语句可以与 try...catch 语句一起使用。
+throw 声明的作用是创建 exception（异常或错误）。
+
+throw(exception)
+
+exception 可以是字符串、整数、逻辑值或者对象。
+
+var x=prompt("Enter a number between 0 and 10:","")
+try
+{ 
+if(x>10) 
+throw "Err1"
+else if(x<0)
+throw "Err2"
+} 
+catch(er)
+{
+if(er=="Err1") 
+alert("Error! The value is too high")
+if(er == "Err2") 
+alert("Error! The value is too low") 
+}
+-------------------------------------------
+
+\'	单引号
+\"	双引号
+\&	和号
+\\	反斜杠
+\n	换行符
+\r	回车符
+\t	制表符
+\b	退格符
+\f	换页符
+-------------------------------------------
+
+在文本字符串内部使用反斜杠对代码进行折行。
+
+document.write("Hello \
+World!")
+-------------------------------------------
+
+txt.length		长度属性
+str.toUpperCase()	toUpperCase() 方法
+
+使用 indexOf() 来定位字符串中某一个指定的字符首次出现的位置。
+
+var str="Hello world!"
+document.write(str.indexOf("Hello") + "<br />")
+document.write(str.indexOf("World") + "<br />")
+document.write(str.indexOf("world"))
+
+使用 match() 来查找字符串中特定的字符，并且如果找到的话，则返回这个字符。
+
+var str="Hello world!"
+document.write(str.match("world") + "<br />")
+document.write(str.match("World") + "<br />")
+document.write(str.match("worlld") + "<br />")
+document.write(str.match("world!"))
+
+使用 replace() 方法在字符串中用某些字符替换另一些字符。
+
+var str="Visit Microsoft!"
+document.write(str.replace(/Microsoft/,"W3School"))
+
+String 对象参考手册
+http://www.w3school.com.cn/js/jsref_obj_string.asp
+-------------------------------------------
+
+使用 Date() 方法获得当日的日期。
+document.write(Date())
+
+getTime() 返回从 1970 年 1 月 1 日至今的毫秒数。
+
+setFullYear() 设置具体的日期。
+
+var d = new Date()
+d.setFullYear(1992,10,3)
+document.write(d)
+
+toUTCString() 将当日的日期（根据 UTC）转换为字符串。
+
+var d = new Date()
+document.write (d.toUTCString())
+
+getDay() 和数组来显示星期，而不仅仅是数字。
+
+var d=new Date()
+var weekday=new Array(7)
+weekday[0]="星期日"
+weekday[1]="星期一"
+weekday[2]="星期二"
+weekday[3]="星期三"
+weekday[4]="星期四"
+weekday[5]="星期五"
+weekday[6]="星期六"
+document.write("今天是" + weekday[d.getDay()])
+
+Date 对象参考手册
+http://www.w3school.com.cn/js/jsref_obj_date.asp
+
+
+为日期对象设置了一个特定的日期 (2008 年 8 月 9 日)：
+var myDate=new Date()
+myDate.setFullYear(2008,7,9)
+
+表示月份的参数介于 0 到 11 之间。也就是说，如果希望把月设置为 8 月，则参数应该是 7。
+
+如果增加天数会改变月份或者年份，那么日期对象会自动完成这种转换。
+-------------------------------------------
+
+数组
+
+var mycars = new Array()
+mycars[0] = "Saab"
+mycars[1] = "Volvo"
+mycars[2] = "BMW"
+
+使用 for...in 声明来循环输出数组中的元素。
+
+for (x in mycars)
+{
+document.write(mycars[x] + "<br />")
+}
+
+concat() 方法来合并两个数组
+
+var arr = new Array(3)
+arr[0] = "George"
+arr[1] = "John"
+arr[2] = "Thomas"
+
+var arr2 = new Array(3)
+arr2[0] = "James"
+arr2[1] = "Adrew"
+arr2[2] = "Martin"
+
+document.write(arr.concat(arr2))
+
+
+-----------------------------------------
+
+<script type="text/javascript">
+var txt = '{"employees":[' +
+'{"firstName":"Bill","lastName":"Gates" },' +
+'{"firstName":"George","lastName":"Bush" },' +
+'{"firstName":"Thomas","lastName":"Carter" }]}';
+
+obj = JSON.parse(txt);
+
+document.getElementById("fname").innerHTML=obj.employees[1].firstName 
+document.getElementById("lname").innerHTML=obj.employees[1].lastName 
+
+
+
+   $(function(){
+     $.getJSON( b.json ,function(data){  
+// getJSON方法获得json文件的代码，其中的回调函数的参数data就是json代码
+      
+     });
+    });
+-----------------------------------------
+
+
+* 多层引号嵌套
+
+" 1 ' 2 \" 3 \' 4 \' 3 \" 2 ' 1 "
+
+
+* 全局变量
+
+
+函数外部 定义全局变量 可以用 var 或者直接 用变量，例如：var a=1 或者 a=1
+
+这样都是全局变量
+
+函数里面定义全局变量 不需要var 例如a=1,如果用了var 就是表示是局部变量！！
+
+
+如果同名的话，局部的会覆盖全局：
+一个局部变量的名称可以与某个全局变量的名称相同，但这是完全不同和独立的两个变量。因此，更改一个变量的值不会影响另一个变量的值。在声明局部变量的函数内，只有该局部变量有意义。
+
+
+
+通过var声明的变量无法删除，所有浏览器表现一致。
+
+通过window.a3方式声明的全局变量在IE6/7/8/9中均无法删除，Firefox/Chrome/Safari/Opera中却可以。
+
+
+
+
+函数运行结束后会自动释放其局部变量
+
+任何一对“{}”都定义新的范围。
+-----------------------------------------
+
+
+* js 保留两位小数 多位小数
+
+
+.toFixed(2)
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function formatFloat(src, pos)
+{
+    return Math.round(src*Math.pow(10, pos))/Math.pow(10, pos);
+}
+alert(formatFloat("1212.2323", 2));
+//-->
+</SCRIPT>
+还有如下几种方法：
+var test=11111.111; 
+alert(test.toFixed(2));
+// Float数据四舍五入到2位小数; 
+function to2bits(flt) { 
+if(parseFloat(flt) == flt) 
+return Math.round(flt * 100) / 100; 
+// 到4位小数, return Math.round(flt * 10000) / 10000; 
+else 
+return 0; 
+}
+-----------------------------------------
+
+JavaScript 全局函数
+http://www.w3school.com.cn/js/jsref_obj_global.asp
+
+parseInt()	将字符串转换为整数
+parseFloat()	将字符串转换为浮点数
+escape()	将一些特殊字符转换成 ASCII 码
+unescape()	将 ASCII 码转换成字符
+
+
+escape( )、eval( )、isFinite( )、isNaN( )、parseFloat( )、parseInt( )、unescape( )。
+1.　escape( )
+escape( ) 函数以一个 string 对象或表达式为参数并返回一个 string 对象。参数指定的字符串中的所有非字母字符被转换成以 XX% 表示的等价数字，XX 是一个表示非字母字符的十六进制数。
+以下示例显示了 escape( ) 函数的作用。
+2.　eval( )
+eval( ) 函数将通过参数传入的一个包含 JavaScript 语句的字符串作为一个 JavaScript 源代码执行。eval ( ) 返回执行 JavaScript 语句的返回值。
+例如，在编写跨浏览器代码时，可以使用以下代码段：
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+styleRef=".style"
+eval("document.all.['something'],"+styleRef+".visibility='visible'");
+/* 以上函数调用相当于执行语句：document.all.['something'].style.visibility='visible' */
+//-->
+</SCRIPT>
+3.　isFinite( )
+isFinite ( ) 函数用于确定一个变量是否有界，如果有界则返回 true，否则返回 false。所谓有界是指表达式的值界于 MAX_VALUE 和 MIN_VALUE 之间。
+4.　isNaN( )
+isNaN( ) 函数用于确定一个变量是否是 NaN，如果是，则返回 true，否则返回 false。NaN 代表 Not a Number，表示非数，即不是任何数。
+例如，isNaN(12) 返回 false，isNaN('a') 返回 true，isNaN(true) 返回 false（因为此时 true 被当作数字 1）。
+5.　parseFloat( )
+parseFloat( ) 函数用于将字符串开头的整数或浮点数分解出来，若字符串不是以数字开头，则返回 NaN。
+6.　parseInt( )
+parseInt( ) 函数与 parseFloat( ) 函数类似，用于将字符串开头的整数分解出来，若字符串不是以数字开头，则返回 NaN。
+例如，如果将刚才的 parseFloat( ) 函数示例中的所有 parseFloat 都用 parseInt 代替。
+7.　unescape( )
+unescape( ) 函数将参数传递来的字符串中的十六进制码转换成 ASCII 码并返回，它完成 escape( ) 函数的逆操作。例如，unescape("Tom%20%26%20and%20Jerry%20show") 的返回值为 "Tom & Jerry show"。
+
+
+
+
+
+
+
+-----------------------------------------
+
+客户端浏览器的全局对象是window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JavaScript 事件参考手册
+http://www.w3school.com.cn/js/jsref_events.asp
+
+JavaScript 高级教程
+http://www.w3school.com.cn/js/index_pro.asp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+·JavaScript 框架
+
+Javascript Framework 
+
+
+Prototype、jQuery、YUI、ExtJS 和 MooTools
+
+
+
+
+使用 JavaScript 框架可以更容易地编写检索、遍历、操作 DOM 元素的代码。它们不仅提供获取 DOM 元素引用的快捷函数，而且还允许 DOM 遍历函数以菊花链（daisy-chaining）方式查找任意深度的父元素、子元素、兄弟元素。最后，框架还提供一系列函数来更轻松地操作这些对象，可以改变、添加或删除内容本身；或者使用 CSS 样式类来改变元素的外观。
+
+框架的另一重要特性是其改进的事件处理支持。由于不同浏览器的实现方式各不相同，跨浏览器事件处理将会非常艰难。因此 JavaScript 框架通常封装浏览器事件，并提供一组有用的跨浏览器兼容的函数来进行处理。有些框架还会提供一组标准键盘代码来表示基于键盘的事件（如按下 Escape 键、Return 键、光标键，等等）。
+
+所有这些特性都非常有用，但 JavaScript 框架有一个特性对于它最近的流行非常重要 — 支持 Ajax。与 JavaScript 的其他许多方面一样，每个 Web 浏览器往往以不同方式支持 Ajax，这使得以一种在所有 Web 浏览器中都受支持的方式处理 Ajax 变得十分复杂。几乎所有 JavaScript 框架都包含某种形式的 Ajax 库支持，通常提供 Ajax 请求和响应对象，以及用于评价响应、更新 DOM 元素、查询特定请求的帮助函数（helper）。
+
+
+大多数 JavaScript 框架都具备的有用特性。包括：
+选择器（Selector）
+DOM 遍历
+DOM 操作
+实用（Utility）函数
+事件处理
+Ajax
+
+
+
+
+
+* jQuery
+
+http://jquery.com/
+
+jquery
+　　设计思想
+　　简洁的思想：几乎所有操作都是以选择DOM元素（有强大的Selector）开始，然后是对其的操作（Chaining等特性）。
+
+
+
+
+* Mootools
+
+
+
+
+* Bootstrap 2.0
+
+twitter的bootstrap框架，Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架，基于jQuery。Joomla 3.0也将采用jQuery，预计会提供jQuery和Mootools的切换。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成，与CSS框架Blueprint存在很多相似之处。Bootstrap 2.0的一个重大改进是添加了响应设计特性，而且为了提供更好地针对移动设备的响应式设计方案，Bootstrap 2.0采用了更为灵活的12栏网格布局。此外，它还更新了一些进度栏以及可定制的图片缩略图，并增加了一些新样式。
+
+
+Bootstrap由动态CSS语言Less写成，在很多方面类似CSS框架Blueprint。经过编译后，Bootstrap就是众多CSS的合集。
+
+http://twitter.github.com/bootstrap/
+
+
+
+
+
+
+
+
+
+* Zepo
+
+这种支持智能手机触摸功能的移动JavaScript框架
+
+
+
+
+* Google AJAXSLT
+
+　　基于Google Maps的工作，Google AJAXSLT是使用XPath的XSL转换（XSLT）的JavaScript实现。XSLT可以把XML文档转换为其他语言，如HTML。AJAXSLT允许使用JavaScript在浏览器上直接完成这些转换。
+　　Google AJAXSLT在所有主要浏览器上都能工作，它是在BSD许可证下发布的。这个工具包很小，包括几个JavaScript文件，还有一些方便的测试页。Google AJAXSLT不是十全十美的，不过，如果Google Suggest有所提示，我们希望Google AJAXSLT的缺点能很快解决。因为Google是最先使用Ajax的网站之一，我们会很有兴致地看到在未来几个月它还会有所增加。
+
+
+
+* Dojo
+
+　　Dojo是最老的框架之一
+
+
+
+
+
+·服务器端框架
+
+
+牛哄哄的服务端Javascript：node.js！
+
+也是在2009年，Ryan Dahl还启动了一个名叫Node的JavaScript全新框架。Node又名Node.js或Nodejs，后面这两个名称更易于搜索。Node包含了Google的V8 解释器，并将其与CommonJS的库文件API捆绑起来，形成了一个可以不依赖浏览器而使用的完整环境。
+
+
+
+但是服务端的情况就不容乐观，除了少数几个解析器能够勉强运行单薄的JS语法，似乎很难让他在服务端大展拳脚.V8?嗯，确实很快，不过还只是个跑在客户端的小伙子.Node.js?嗯，的确提出了很多特性，不过就拿这些特性想征服服务端的开发还是不容乐观.RingoJS?JVM的庞大，让JavaScript无法灵巧的伸展.IronJS?无案例，无图，无真相。
+
+
+
+
+
+
+
+
+CPAINT
+　　CPAINT（跨平台异步接口工具包）在服务器端实现Ajax，它向客户返回文本或DOM文档对象，以便用JavaScript处理。CPAINT在大多数主要浏览器上都能用，而且支持远程脚本，在GPL协议下发布。这个项目的文档相当完备，不过，CPAINT只支持PHP和ASP。
+Sajax
+　　利用Sajax，可以直接从JavaScript调用服务器端代码。Sajax支持Perl、Python、Ruby和ASP等语言（不过奇怪的是，目前并不支持Java）。安装Sajax相当简单，只涉及针对特定服务器语言的简单的库。Sajax的开发社区极其活跃。已经确认的只有IE 6和Mozilla/Firefox提供Sajax支持，不过本书作者认为它在Safari上也能很好地使用。
+JSON/JSON-RPC
+　　JavaScript对象注解（JSON）是一种文本格式，与XML很相似，可以用于交换数据。JSON的设计要保证两方面，一方面便于人阅读，另一方面便于机器解析，它使用了C系列语言类似的约定。与JSON相关的还有JSON-RPC，这是一个远程过程调用（RPC）协议，类似于XML-RPC，但面向的是JSON语言。作为规约，JSON-RPC在许多语言中都有实现，包括Java、Ruby、Python和Perl。
+　　由于JSON-RPC是规约，你需要知道哪个特定实现适用于你的环境，还要充分了解特定的实现。取决于具体的实现，有些实现的文档相当完备，有些则根本没有。开发人员的参与程度也有很大不同。关于JSON-RPC规约的讨论已经有些少了。
+Direct Web Remoting
+　　利用Direct Web Remoting (DWR)，你能从JavaScript直接调用Java方法，就好像它们是浏览器的本地方法一样。尽管后台严格限制为Java，但DWR仍然是最流行的框架之一。DWR的文档是最棒的，还有一些有用的例子可以帮助你入门。
+　　安装并不难，不过还要编辑Web应用的部署描述文件，另外要编辑DWR特定的文件。DWR配置文件指定了可以远程创建和调用的类，而且文档中警告用户：从浏览器调用服务器确实存在一些安全问题。除了包含服务器端代码的JAR文件，另外还有两个JavaScript文件包含了一些辅助函数。DWR适用于一些常见的Web框架，如Struts和Tapestry，在Apache协议下发布。如果想从Web页面调用Java方法，DWR能助你一臂之力。
+SWATO
+　　Shift Web Applications TO (SWATO)也是一个基于Java的Ajax框架解决方案。SWATO在所有Servlet 2.3或更高版本的容器中都能工作，类似于DWR，它也需要对配置文件做一些更新。有意思的是，SWATO充分利用了JSON来完成客户和服务器之间数据的编组，与本附录中讨论的其他一些框架相似，它也允许从浏览器调用服务器端Java。为了帮助开发人员，SWATO包括许多可复用的组件，如自动完成文本框等。
+　　与使用其他框架相比，使用SWATO要相对复杂一些，要访问的类需要实现一个SWATO接口。不过，其文档相当完备，对于入门来讲绰绰有余。SWATO设计为使用Spring来打包服务，但是不一定非得如此。
+Java BluePrint
+　　Sun的BluePrints小组一直忙于将Ajax纳入他们的解决方案目录（Solutions Catalog）中。Solutions Catalog包括一些很好的文档，描述了如何使用基本Ajax，如何实现自动完成，如何创建一个进度条以及如何验证表单。它还包括JavaServer Faces组件。
+Ajax Net
+　　Ajax Net之于Microsoft .NET就相当于SAJAX、DWR和SWATO之于Java。利用AjaxNet，你能从JavaScript客户调用.NET方法。AjaxNet包括一个DLL，可以与VB .NET或C#一同使用。AjaxNet的文档很好地展示了针对各种场景的解决方案，而且能得到相关的源代码。不过，AjaxNet的许可协议很不明确。
+Microsoft的Atlas项目
+　　Microsoft在Ajax领域涉足的时间已经不短了，毕竟，XMLHttpRequest对象是Microsoft发明的，而且从1998年开始就已经用在Web版本的Outlook中。Microsoft把重点放在提供一个更加健壮的开发环境上，从而让开发人员的工作更轻松。Microsoft的着眼点还不只这些，还力图提供客户端脚本框架、ASPNET控件和Web服务集成。Microsoft还发布了Atlas项目，作为其ASPNET 2.0预览版的一部分。有Microsoft的介入，开发人员的工具包可能会比今天充实得多。
+Ruby on Rail
+　　Rails是一个令人兴奋的新Web框架，建立在Ruby语言基础上。如今，Rails已经得到了大量关注（在Google上查一下Rails，可以找到更多信息），这是因为使用Rails能够快速开发基于Web的应用。开发Basecamp时，37signals小组提出名为Rails的框架。Basecamp正是Ajax应用的主要示例，所以看到Rails对Ajax提供如此充分的支持，我们不应感到奇怪。Rails有许多内置的JavaScript库，其中包装了很多常用的特性，它还包含一个模块，其中包装了Ruby的JavaScript调用。如果你在使用Rails，就会发现Ajax非常简单。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+·判断浏览器类型
+
+但是目前的情况来看,jquery.support并不好用,而且是非常的难用,我们还是老老实实的用$.browser来判断浏览器类型吧
+
+如果是为了判断IE的版本我还是推荐用IE的条件表达式来书写JS
+
+
+
+<!--[if IE]>
+	<script type="text/javascript">
+		alert("ie")
+	</script>
+<![endif]-->
+
+<!--[if IE 6]>
+	<script type="text/javascript">
+		alert("ie6")
+	</script>
+<![endif]-->
+
+<!--[if IE 7]>
+	<script type="text/javascript">
+		alert("ie7")
+	</script>
+<![endif]-->
+
+这个比我们手动通过$.browser来判断IE版本更精准,也不用去记jquery的browser的使用方法了
+
+
+
+
+
+
