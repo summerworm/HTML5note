@@ -354,6 +354,21 @@ http://www.sharejs.com/codes/go/5657
 
 
 
+用Go实现异步的Web开发
+http://www.mikespook.com/2011/03/%E7%94%A8go%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E7%9A%84web%E5%BC%80%E5%8F%91/
+
+
+
+如何高效利用 GitHub
+http://www.oschina.net/news/38185/use-github-effective
+
+
+go 语言读取 excel 2007 等。
+https://github.com/tealeg/xlsx
+
+
+
+
 
 ·看过的
 
