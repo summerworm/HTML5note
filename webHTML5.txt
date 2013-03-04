@@ -12,6 +12,34 @@ bzr
 
 
 
+-------------------------------------------
+http://www.cnblogs.com/zdz8207/archive/2012/05/20/2509356.html
+ Bitbucket
+
+支持Git、Mercurial，免费版有5个用户限制。公有和私有仓库都可以无限制创建，有协作工具（Issue tracker，Wiki）。
+
+Assembla
+
+支持SVN、Git、Mercurial，免费版，无用户限制，无仓库限制，存储空间1G，没有协作工具（Issue tracker，Wiki等）。
+
+考虑先使用 Bitbucket, 当用户不够用的时候再迁移到 Assembla。
+
+-------------------------------------------
+
+在windows下使用GIT，需要安装msysgit，为了操作方便同时安装tortoiseGit（类似于svn中的subversion和tortoiseGit的关系）。两个软件的下载地址分别如下所示：
+http://code.google.com/p/msysgit/downloads/list
+http://code.google.com/p/tortoisegit/wiki/Download?tm=2
+下载后依次安装msysgit和tortoisegit。
+
+
+使用Bitbucket来免费托管静态网站
+http://dbian.github.com/geek/2012/10/05/bitbucket/
+
+
+
+
+
+
 
 
 ·

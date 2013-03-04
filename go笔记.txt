@@ -2275,6 +2275,89 @@ http://community.itbbs.cn/thread/21483/
 
 
 ·Go语言文件操作
+
+
+
+
+-------------------------------------------
+Go语言文件操作
+http://tiaozhanshu.com/post/2013/01/14/go%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C
+
+
+整理Go语言文件操作例子。兼容最新Go 1版本有三种文件读写方法，分别是用os库、buffio库和ioutil库。下面三个例子都是从一个文件拷贝到另一个文件（没做性能对比）。
+一、使用os库
+
+package main
+
+import ( "io" "os" )
+
+func main() { fi, err := os.Open("input.txt") if err != nil { panic(err) } defer fi.Close()
+
+fo, err := os.Create("output.txt")
+if err != nil { panic(err) }
+defer fo.Close()
+
+buf := make([]byte, 1024)
+for {
+    n, err := fi.Read(buf)
+    if err != nil &amp;&amp; err != io.EOF { panic(err) }
+    if n == 0 { break }
+
+    if n2, err := fo.Write(buf[:n]); err != nil {
+        panic(err)
+    } else if n2 != n {
+        panic("error in writing")
+    }
+}
+} 这个例子使用了os.Open os.Create。
+二、使用bufio库
+
+package main
+
+import ( "bufio" "io" "os" )
+
+func main() { fi, err := os.Open("input.txt") if err != nil { panic(err) } defer fi.Close() r := bufio.NewReader(fi)
+
+fo, err := os.Create("output.txt")
+if err != nil { panic(err) }
+defer fo.Close()
+w := bufio.NewWriter(fo)
+
+buf := make([]byte, 1024)
+for {
+    n, err := r.Read(buf)
+    if err != nil &amp;&amp; err != io.EOF { panic(err) }
+    if n == 0 { break }
+
+    if n2, err := w.Write(buf[:n]); err != nil {
+        panic(err)
+    } else if n2 != n {
+        panic("error in writing")
+    }
+}
+
+if err = w.Flush(); err != nil { panic(err) }
+}
+三、使用ioutil库
+
+package main
+
+import ( "io/ioutil" )
+
+func main() { b, err := ioutil.ReadFile("input.txt") if err != nil { panic(err) }
+
+err = ioutil.WriteFile("output.txt", b, 0644)
+if err != nil { panic(err) }
+}
+
+
+
+
+
+
+
+
+-------------------------------------------
 http://blog.tcreator.com/?p=913
 
 
