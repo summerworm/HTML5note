@@ -7,6 +7,13 @@ http://cn.docs.mongodb.org/manual/
 
 
 
+
+Mongodb 备份与恢复
+http://www.netingcn.com/mongodb-mongodump-mongorestore.html
+
+
+
+
 Mongodb数据导出工具mongoexport和导入工具mongoimport介绍
 http://chenzhou123520.iteye.com/blog/1641319
 
@@ -128,7 +135,34 @@ db.user.find()
 
 
 
-·工具
+
+
+
+·管理工具
+
+
+
+不错的管理工具 试用13天
+http://www.mongovue.com/downloads/
+http://www.mongovue.com/
+
+
+
+
+开源MongoDB管理工具MongoCola
+http://www.shaoqun.com/a/25526.aspx
+项目地址
+https://github.com/magicdict/MagicMongoDBTool
+
+
+
+废弃的项目
+Mongodb Management Studio
+
+
+
+基于php的
+MongoDB有大量的可视化GUI工具，不过最好的要数RockMongo 了，官方地址是：http://code.google.com/p/rock-php/wiki/rock_mongo_zh
 
 
 
@@ -229,10 +263,6 @@ http://www.gbin1.com/technology/javautilities/20120116gettingstartedwithmongodbp
 
 
 
-
-
-
-
 mongodb查询数组中包含某个值,$in,$all,Value in an Array
 当数据库里存的单个值，想查询这个值是否是条件数组中的一个值，我们用的是$in
 但是如果数据库中存的是一个数组，想查询这个数组里是否包含某个值，以前我一直用$all
@@ -243,8 +273,10 @@ $whe['ck'] = 'a';
 
 
 
-《MongoDB权威指南》
 
+
+
+《MongoDB权威指南》
 
 
 

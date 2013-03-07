@@ -1,6 +1,29 @@
 ﻿
 
 
+
+
+
+
+
+
+
+这个算是简单分词
+http://book.douban.com/annotation/21840970/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 阿凡达变脸器官方地址：http://www2.mcdonalds.fi/day/avatar/avatarize.php?lid=finland
 一个中文介绍：http://www.youahh.cn/doc-view-4441.html
 
@@ -9,7 +32,36 @@
 
 bzr
 
-bzr
+
+sphinx
+你做检索还是专门的工具好点
+而且sphinx现在的RT索引也不差
+
+搜索其实搜索引擎都差不多  主要还是在分词器及分词策略上
+
+如果你数据更新很快，那就sphinx+redis
+
+
+go-html-transform
+
+
+
+
+10gen
+10gen 既是一个云平台，又是一个可下载的开放源代码包，可用于创建您自己的私有云。
+http://www.oschina.net/p/10gen
+
+
+
+
+
+
+据说golang有个模仿erlang/opt框架的项目，
+群里谁知道项目名称
+四月份平民(594894548) 2013-3-7 11:44:18
+skynt
+skynet
+
 
 
 
