@@ -5,7 +5,10 @@
 
 
 
-
+go语言包应用示例，征集人员一起来参与
+http://bbs.gocn.im/thread-178-1-1.html
+项目地址
+https://github.com/astaxie/gopkg
 
 
 
