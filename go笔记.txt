@@ -9,13 +9,46 @@ Ken和Dennis是Unix和C的发明人
 
 
 
+golang mvc 框架 revel
+
+
+MinGW版本-wxWidgets库编译安装和生成程序DLL依赖问题.
+http://www.doc88.com/p-383741626697.html
 
 
 
 
 
 
-·
+
+
+
+·学习资源
+
+
+
+这个算是简单分词
+http://book.douban.com/annotation/21840970/
+
+
+
+
+
+《The Go Programming Language Phrasebook》
+
+
+
+
+
+go语言包应用示例，征集人员一起来参与
+http://bbs.gocn.im/thread-178-1-1.html
+项目地址
+https://github.com/astaxie/gopkg
+
+
+
+
+
 
 
  ****
@@ -1691,8 +1724,37 @@ func main() {
 
 
 
+* 闭包
 
+闭包是一种有状态的匿名函数。要点在于第一是个匿名函数，第二有状态。
+如这段代码：
+func ExFunc(n int) func() {
+    sum:=n
+    a:=func () {   
+            fmt.Println(sum+1)   
+    }                   
+    return a
+}
+func main() {
+    myFunc := ExFunc(10)
+    myFunc()
+}
 
+a就是一个闭包，sum是它的状态。
+等效于：
+type closure struct {
+        sum int
+}
+func (p *closure) myFunc() {
+        fmt.Println(p.sum+1)
+}
+func ExFunc(n int) closure {
+    return closure{n}
+}
+func main() {
+    c := ExFunc(10)
+    c.myFunc()
+}
 
 
 

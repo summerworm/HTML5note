@@ -3,36 +3,124 @@
 
 
 
-
-
-go语言包应用示例，征集人员一起来参与
-http://bbs.gocn.im/thread-178-1-1.html
-项目地址
-https://github.com/astaxie/gopkg
+beego
 
 
 
 
-有专家称，习近平要做什么，都是王岐山在开路，王是姚依林的女婿，实力派人物，在赵紫阳时代就参与改革，对中国的经济形势非常了解，本来这次安排作副总理，实际是执行副总理的位置。 
-
-
-百达翡丽是一个常常和贵族、皇室联系在一起的顶级品牌，其广告词是：〝没有人能拥有百达翡丽，你只不过为下一代保管而已。〞
+linux服务器 排行榜
+http://distrowatch.com/
 
 
 
 
 
-
-
-
-这个算是简单分词
-http://book.douban.com/annotation/21840970/
-
+新闻聚合
+http://www.feedly.com/
 
 
 
 
-《The Go Programming Language Phrasebook》
+
+
+
+
+
+https://github.com/gosexy/db
+骚爆了的数据库。。
+
+http://gosexy.org/
+
+
+
+
+
+
+GR死忠快去投票！http://keepgooglereader.com/
+
+
+
+
+
+
+
+
+
+
+
+linux.linuxidc.com - /2011年资料/Android入门教程/
+http://linux.linuxidc.com/2011%E5%B9%B4%E8%B5%84%E6%96%99/Android%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/
+下载地址在 http://linux.linuxidc.com/
+用户名与密码都是www.linuxidc.com
+
+
+
+
+IT男青年应该献身文艺女青年的十大理由
+http://www.cnbeta.com/articles/223909.htm
+
+IT男青年应该拒绝文艺女青年的十大理由
+http://www.cnbeta.com/articles/223956.htm
+
+
+
+索引，复制，分片，丰富的查询语法，特别灵活的数据模型。
+
+
+
+
+
+
+
+
+
+
+qiniu刚刚开源了不少东西啊。。 
+https://github.com/qiniu?tab=repositories
+ 
+[北京]杨明茂(344378338)  10:55:33
+http://www.oschina.net/p/domainpark
+[北京]-Beta Go(136448723)  11:08:53
+xio是七牛的人
+
+域名托管服务程序domainpark
+https://github.com/jonsen/domainpark
+
+
+
+v, ok := m["flag"].(float64)
+fmt.Println(v, ok)
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------
+Javascript教程：AngularJS的五个超酷特点
+http://www.sunnybtoc.com/page/M0/S772/772123.html
+
+AngularJS入门教程02：AngularJS 模板
+http://www.ituring.com.cn/article/15762
+
+AngularJS入门教程
+http://wenku.baidu.com/view/4e4e2b63561252d380eb6eb4.html
+
+
+AngularJS开发指南01：AngularJS简介
+http://www.angularjs.cn/docs/developer/328.html
+
+AngularJS开发指南05：指令
+http://www.angularjs.cn/docs/developer/548.html
+
+
+
+-------------------------------------------
 
 
 
