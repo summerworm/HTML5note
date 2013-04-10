@@ -253,12 +253,45 @@ http://www.gbin1.com/technology/javautilities/20120116gettingstartedwithmongodbp
 ·学习笔记
 
 
+
+
+操作MongoDB
+http://www.cnblogs.com/sunyanjun/articles/2114192.html
+
+
+
+各文件作用
+
+mongo.exe 客户端程序
+ 
+mongod.exe 服务端程序
+ 
+mongodump.exe 备份程序
+ 
+mongoexport.exe 数据导出程序
+ 
+mongofiles.exe GridFS工具,内建的分布式文件系统
+ 
+mongoimport.exe 数据导入程序
+ 
+mongorestore.exe 数据恢复程序
+ 
+mongos.exe 数据分片程序，支持数据的横向扩展
+ 
+mongostat.exe 监视程序
+
+
+
+
+
+
+
+
 据说，MongoDB中对象的最大尺寸被限制为4MB。这样看来可以存储很大量的文字呀。
 1.8之后限制是16MB。
 
 在32位系统上，最大是单个数据库2GB，如果需要更大的单个数据库容量，就要用64位系统。
 另外，如果需要储存更大的文件（二进制，如图片，word文本，等），可以用GridFS而不是MongoDB：
-
 
 
 
@@ -269,8 +302,6 @@ mongodb查询数组中包含某个值,$in,$all,Value in an Array
 现在这样子就可以了。
 $whe['ck'] = 'a';
 这里ck是一个数组
-
-
 
 
 
@@ -1081,6 +1112,10 @@ http://www.oschina.net/translate/mongodb-flexible-nosql-for-humongous-data
 ·简介
 
 
+
+
+
+
 MongoDB名字来源与单词：“humongous”) ,它是一个可扩展性，高性能，开源NoSQL数据库，源代码是C++编写的。
 MongoDB的特点有：
 1、文件存储格式为BSON（一种JSON的扩展）
@@ -1149,10 +1184,59 @@ MongoDB把数据存储在文件中（默认路径为：/data/db），为提高�
 
 
 
+·示例代码
 
 
+go语言操作 mongodb 的示例代码
 
 
+package main
+
+import (
+    "fmt"
+    "launchpad.net/mgo"
+    "launchpad.net/mgo/bson"
+)
+
+type Mail struct {
+    Id bson.ObjectId "_id"
+    Name string
+    Email string
+}
+
+func main() {
+    // 连接数据库
+    session, err := mgo.Dial("127.0.0.1")
+    if err != nil {
+        panic(err)
+    }
+    defer session.Close()
+
+    // 获取数据库,获取集合
+    c := session.DB("test").C("mail")
+
+    // 存储数据
+    m1 := Mail{bson.NewObjectId(), "user1", "user1@dotcoo.com"}
+    m2 := Mail{bson.NewObjectId(), "user1", "user2@dotcoo.com"}
+    m3 := Mail{bson.NewObjectId(), "user3", "user3@dotcoo.com"}
+    m4 := Mail{bson.NewObjectId(), "user3", "user4@dotcoo.com"}
+    err = c.Insert(&m1, &m2, &m3, &m4)
+    if err != nil {
+        panic(err)
+    }
+
+    // 读取数据
+    ms := []Mail{}
+    err = c.Find(&bson.M{"name":"user3"}).All(&ms)
+    if err != nil {
+        panic(err)
+    }
+
+    // 显示数据
+    for i, m := range ms {
+        fmt.Printf("%s, %d, %s\n", m.Id.Hex(), i, m.Email)
+    }
+}
 
 
 
